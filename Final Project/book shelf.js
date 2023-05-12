@@ -7,7 +7,7 @@ var bookDecorEllipseObject;
 
 function setup()
 {
-    createCanvas(1500,800);
+    createCanvas(1200,800);
 
     //Shelf
     ShelfObject = new bookShapes(0,500,1500,200,75,30,0);
@@ -84,12 +84,24 @@ function draw()
     //Dracula
     
     DraculaObject.display();
+
+    ////Drac Link
+    openBook(DraculaObject);
+
+    ////Drac Decor
     DraculaDecorObject.display();
     DraculaDecorObject2.display();
     DraculaDecorObject3.display();
+
+    BookTitleDrac();
     
     //Metemorphasis
     MetaObject.display();
+
+    ////Meta Link
+    openBookMeta(MetaObject);
+    BookTitleMeta();
+
     ////Bug Parts
     MetaDecorObject.display();
     MetaDecorObject2.display();
@@ -102,11 +114,23 @@ function draw()
     //Turn of the Screw
 
     TurnObject.display();
+
+    ////Turn Link
+    openBookTurn(TurnObject);
+    BookTitleTurn();
+
+    ////Turn Decor
     TurnDecorObject.display();
     TurnDecorObject2.display();
 
     //Frankenstein
     FrankObject.display();
+
+    ////Frank Link
+    openBookFrank(FrankObject);
+    BookTitleFrank();
+
+    ////Frank Decor
     FrankDecorObject.display();
     FrankDecorObject2.display();
     FrankDecorObject3.display();
@@ -115,25 +139,39 @@ function draw()
 
     //Dorian Grey
     DorianObject.display();
+
+    ////Dorian Link
+    openBookDorian(DorianObject);
+    
+
+    ////Dorian Decor
     DorianDecorObject.display();
+    BookTitleDorian();
 
     //Yellow Wallpaper
     YellowObject.display();
+
+    ////Yellow Link
+    openBookYellow(YellowObject);
+
+    ////Yellow Decor
     YellowDecorObject.display();
     YellowDecorObject2.display();
+    BookTitleYellow();
+
 
     //Candle
     CandleObject.display();
     CandleFlameObject.display();
     CandleWickObject.display();
     
-    //Links
+    
 
-    //Titles
-    BookTitles();
+    
     
 }
 
+//Picture Frame
 function FrameText()
 {
     fill('black');
@@ -152,7 +190,161 @@ function FrameText()
     text('building a better pond together since 1999!',650,400);
 }
 
-function BookTitles()
+//Titles
+function BookTitleDrac()
 {
-
+    textSize(25);
+    fill('white');
+    text('Dracula',105,100 );
+    textSize(15);
+    text('Bram Stoker',110,600);
 }
+
+function BookTitleMeta()
+{
+    fill('black');
+    textFont('sans serif')
+    textSize(25);
+    text('M',220,200);
+    text('E',240,225);
+    text('T',220,250);
+    text('A',240,275);
+    text('M',220,300);
+    text('O',240,325);
+    text('R',220,350);
+    text('P',240,375);
+    text('H',220,400);
+    text('O',240,425);
+    text('S',220,450);
+    text('I',240,475);
+    text('S',220,500);
+
+    text('Kafka', 205,625);
+}
+
+function BookTitleTurn()
+{
+    fill('silver');
+    textSize(15)
+    textFont('script');
+    text('The Turn',285,100);
+    text('of',305,120);
+    text('The Screw',280,140);
+
+    text('Henry',290,600);
+    text('James',290,620);
+}
+
+function BookTitleFrank()
+{
+    fill('silver');
+    textSize(15);
+    textFont('helvetica');
+    text('Frankenstein', 355,250);
+    text('Mary Shelley',355,485);
+}
+
+function BookTitleDorian()
+{
+    textSize(10);
+    textFont('cursive');
+    text('The', 465,200);
+    text('Picture', 455,225);
+    text('of',465,250);
+    text('Dorian',455,275);
+    text('Gray',460,300);
+    text('Wilde',460,600);
+}
+
+function BookTitleYellow()
+{
+    fill('brown');
+    textFont('clarendon');
+    text('The',505,150);
+    text('Yellow',505,175);
+    text('Wallpaper',505,200);
+    textFont('cursive');
+    textSize(25);
+    text('C.',510,450);
+    text('P.',510,500);
+    text('G.',510,550);
+}
+
+//Links
+
+
+
+function openBook(myObject)
+{
+    if(mouseIsPressed)
+    {
+        if(mouseX > myObject.x && mouseX < myObject.x + myObject.w && 
+            mouseY > myObject.y && mouseY < myObject.y + myObject.h)
+        {
+         window.open("https://www.gutenberg.org/cache/epub/345/pg345-images.html", "_blank");    
+        }
+    }
+}
+
+function openBookMeta(myObject)
+{
+    if(mouseIsPressed)
+    {
+        if(mouseX > myObject.x && mouseX < myObject.x + myObject.w && 
+            mouseY > myObject.y && mouseY < myObject.y + myObject.h)
+        {
+         window.open("https://www.gutenberg.org/cache/epub/5200/pg5200-images.html", "_blank");   
+        }
+    }
+}
+
+function openBookTurn(myObject)
+{
+    if(mouseIsPressed)
+    {
+        if(mouseX > myObject.x && mouseX < myObject.x + myObject.w && 
+            mouseY > myObject.y && mouseY < myObject.y + myObject.h)
+        {
+         window.open("https://www.gutenberg.org/cache/epub/209/pg209-images.html", "_blank");
+        }
+    }
+}
+
+function openBookFrank(myObject)
+{
+    if(mouseIsPressed)
+    {
+        if(mouseX > myObject.x && mouseX < myObject.x + myObject.w && 
+            mouseY > myObject.y && mouseY < myObject.y + myObject.h)
+        {
+         window.open("https://www.gutenberg.org/cache/epub/84/pg84-images.html ", "_blank");
+        }
+    }
+}
+
+function openBookDorian(myObject)
+{
+    if(mouseIsPressed)
+    {
+        if(mouseX > myObject.x && mouseX < myObject.x + myObject.w && 
+            mouseY > myObject.y && mouseY < myObject.y + myObject.h)
+        { 
+         window.open("https://www.gutenberg.org/cache/epub/174/pg174-images.html", "_blank"); 
+        }
+    }
+}
+
+function openBookYellow(myObject)
+{
+    if(mouseIsPressed)
+    {
+        if(mouseX > myObject.x && mouseX < myObject.x + myObject.w && 
+            mouseY > myObject.y && mouseY < myObject.y + myObject.h)
+        {
+         window.open("https://www.gutenberg.org/cache/epub/1952/pg1952-images.html", "_blank");   
+        }
+    }
+}
+
+
+
